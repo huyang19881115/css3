@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传图片显示图片信息</title>
+		<style type="text/css">
+			#img{
+				width: 50px;
+				height: 50px;
+				display: none;
+				border:1px solid red;
+			}
+			
+			
+		</style>
+		<script src="js/jquery-2.1.1.min.js"></script>
+	</head>
+	<body>
+		
+		<form action="result.html" method="post">			
+			<p><input type="text" name="name" placeholder="请输入用户名" required /></p>
+			<p><input type="password" name="pass" placeholder="请输入密码" required /></p>
+			<p><input type="password" name="repass" placeholder="请输入确认密码" required/></p>
+			<p><input type="date" name="birthday" placeholder="请输入用生日" /></p>
+			<p><input id="file" type="file"  />
+			    <img id="img" src="" alt="" />
+			</p>
+			
+			<input type="submit" value="注册"/>
+		</form>
+		
+		
+		<script>
+			/**
+			 * '文件'+file.name+'<br>'+
+               '大小'+file.size+'<br>'+
+               '修改'+file.lastModifiedDate+'<br>';
+                                             文件类型：file.type
+                                    常见图片的类型：(image/jpeg','image/png', image/gif' )
+
+			 * 
+			 * 
+			 */
+			
+			$(function(){
+				//文档加载完毕  绑定事件 
+				
+				$("#file").change(function(){
+					
+				var reader= new FileReader();
+				var file=this.files[0];
+				console.log(file.size+";"+file.name+";"+file.type);
+				reader.readAsDataURL(file);
+				reader.onload=function(e) {
+					$("#img").show();
+					$("#img").attr("src",e.target.result);
+				};				
+					
+				});			
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>
