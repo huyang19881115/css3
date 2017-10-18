@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单复习</title>
+	</head>
+	<body>
+     
+     
+     <!--
+     	作者：huyang198815@163.com
+     	时间：2017-10-17
+     	描述：
+     	
+        
+       表单中的标签：       
+      form: 表单     
+      input:   
+         type: 属性 
+                                   值:
+            text:单行文本框
+               size: 文本框的长度
+               maxlength:最大的输入字符个数
+            password: 密码框
+            radio:单选框
+                checked 属性 进行选中
+            checkbox:多选框
+                checked 属性 进行选中
+            button:普通的按钮
+            submit:提交按钮             
+            reset: 重置按钮
+            
+            file: 传输文件            
+            image:图片            
+            h5:
+            email:邮箱
+            number:数字
+               min:
+               max:
+              step:
+            url:链接地址  
+            search:搜索框
+            range:滑块
+            color:
+            date: 
+            
+        name:属性
+                                 提交使用
+                                 
+        id:属性    元素的标识 
+         
+         
+      select:下拉框   
+         option:选项	  selected 属性即可 使下拉框选中
+      
+      textarea
+         cols:跨列
+         rows:跨行
+           
+    表单高级的属性：
+     1.隐藏       hidden
+     2.只读的   readonly
+     3.禁用     disabled
+          
+      语义化：
+      label:标签  
+        for: 属性 值 其他元素的id 值
+      fildset:
+      legend:
+      
+ 
+ 表单中简单的验证:
+     1.提示信息:  placeholder：
+     2.必须输入:  required 
+     3.正则验证:(了解)
+        pattern="" 正则表达式的值 
+         
+      
+     	
+     	
+     	
+     -->
+		
+		
+		<form action="" method="post">
+			
+			
+			<p><label for="count">账号</label>
+				<input id="count" type="text" /></p>
+			<p><input type="password" placeholder="请输入密码"/></p>
+			<p><input type="radio"  checked/></p>
+			<p><input type="checkbox" checked/></p>
+			<p>
+				<select name="">
+					<option value="">清选择</option>
+					<option value="" selected>china</option>
+				</select>
+			</p>
+			
+			<p><input type="number" min="0" max="100" step="10" /></p>
+			<p>
+				<textarea name="" rows="10" cols="30"></textarea>
+				
+			</p>
+			<p>隐藏  :<input type="hidden"  name="uid" value="15"/></p>
+			<p>只读：<input type="text" name="name" value="admin" readonly /></p>
+			<p>禁用:<input type="text" name="age" value="15"  disabled/></p> 
+			<input type="submit" value=""/>
+		</form>
+		
+	</body>
+</html>
